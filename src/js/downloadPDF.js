@@ -24,7 +24,7 @@ class DownloadPDF extends React.Component {
     console.log(data)
     return (
       <div >
-        <button onClick={this.generatePdf(data, keys)} >Download PDF</button>
+        <button onClick={()=>this.generatePdf(data, keys)} >Download PDF</button>
       </div>
     );
   }

@@ -29,7 +29,7 @@ body{
   outline: none;
 }
 .loginButton{
-  margin-top: 50px;
+  margin-top: 90px;
   width: 85%;
   height: 40px;
   font-size: 20px;
@@ -56,4 +56,23 @@ tbody {color:blue;}table, th, td {
 }
 td, th{
  padding: 5px;
+}
+
+.upload{
+  margin: 20px 0px 20px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.import-container{
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.import-input{
+  display: flex;
+  margin: 20px;
 }
