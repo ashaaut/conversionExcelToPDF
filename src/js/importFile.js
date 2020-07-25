@@ -3,6 +3,7 @@ import React from "react";
 import { ExcelRenderer,OutTable } from "react-excel-renderer";
 import  DownloadPDF from './downloadPDF'
 import TableView from './tableView';
+
 class ImportFile extends React.Component {
 
   constructor(props) {
@@ -40,6 +41,8 @@ class ImportFile extends React.Component {
           onChange={this.changeHandler}
         />
         {this.state.rows.length>0? <TableView data={this.state.rows}/>:""}
+
+
         {/* <OutTable data={this.state.rows} columns={this.state.cols} tableClassName="ExcelTable2007" tableHeaderRowClass="heading" /> */}
        </div>
     );

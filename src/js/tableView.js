@@ -1,7 +1,7 @@
-import React, {Component } from "react";
+import React, { PureComponent } from "react";
+import DownloadPDF from './downloadPDF';
 
-
-export default class Table extends Component {
+export default class Table extends React.Component {
 
     constructor(props) {
         super(props);
@@ -15,14 +15,18 @@ export default class Table extends Component {
         )
 
     }
+
     renderRow(row){
-        return row.map((key) => <td key={key}>{key}</td>)
+        let datarows = row.map((key, index) => <td key={key}>{key}</td>)
+        datarows.push(<td key={"export-key"}><DownloadPDF data={row} keys={this.props.data[0]}/></td>)
+        return  datarows
     }
     getRowsData (){
         var items = this.props.data;
-        return items.map((row)=> <tr>{this.renderRow(row)}</tr>
+        return items.map((row, index)=> <tr key={index}>{this.renderRow(row)}</tr>
         )
         }
+       
     render() {
         return (
             <div>
