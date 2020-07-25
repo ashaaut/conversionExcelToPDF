@@ -34,3 +34,26 @@ body{
   height: 40px;
   font-size: 20px;
 }
+.column-container {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.table-view {
+  min-width: 781px;
+  min-height: 455px;
+}
+thead {color:green;}
+tbody {color:blue;}table, th, td {
+ border: 1px solid black;
+}
+td, th{
+ padding: 5px;
+}
