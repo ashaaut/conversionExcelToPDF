@@ -5,10 +5,10 @@ import Login from './js/login';
 import ImportFile from './js/importFile';
 
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super()
-    this.state={
-      submitted:false
+    this.state = {
+      submitted: false
     }
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -19,11 +19,8 @@ class App extends React.Component {
   render() {
     return (
       <div id="app-container">
-        {this.state.submitted?<ImportFile/>:<Login onSubmit={this.onSubmit}/>}
-        
-
+        {this.state.submitted ? <ImportFile /> : <Login onSubmit={this.onSubmit} />}
       </div>
-
     );
   }
 }

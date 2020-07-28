@@ -1,8 +1,7 @@
-import React, { PureComponent } from "react";
+import React, {Component } from "react";
 import DownloadPDF from './downloadPDF';
 
-export default class Table extends React.Component {
-
+export default class Table extends Component {
     constructor(props) {
         super(props);
         this.getHeader = this.getHeader.bind(this);
@@ -10,23 +9,25 @@ export default class Table extends React.Component {
     }
 
     getHeader() {
-       var headers=this.props.data[0];
-        return headers.map((header) =><th>{header.toUpperCase()}</th>
+        var headers = this.props.data[0];
+        return headers.map((header) => <th>{header.toUpperCase()}</th>
         )
-
     }
 
-    renderRow(row){
+    renderRow(row) {
         let datarows = row.map((key, index) => <td key={key}>{key}</td>)
-        datarows.push(<td key={"export-key"}><DownloadPDF data={row} keys={this.props.data[0]}/></td>)
-        return  datarows
+        let keys=this.props.data[0]
+        datarows.push(<td key={"export-key"}><DownloadPDF data={row} keys={keys} /></td>)
+        return datarows
     }
-    getRowsData (){
+    getRowsData() {
         var items = this.props.data;
-        return items.map((row, index)=> <tr key={index}>{this.renderRow(row)}</tr>
+        return items.map((row, index) =>{
+            return index ?<tr key={index}>{this.renderRow(row)}</tr> :''
+        } 
         )
-        }
-       
+    }
+
     render() {
         return (
             <div className="table-container">
@@ -39,7 +40,6 @@ export default class Table extends React.Component {
                     </tbody>
                 </table>
             </div>
-
         );
     }
 }

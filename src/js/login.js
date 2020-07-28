@@ -1,14 +1,7 @@
 
 import React from "react";
-import ImportFile from "./importFile"
 
 class Login extends React.Component {
-  constructor(props) {
-    super(props)
-    
-   
-  }
- 
   render() {
     return (
       <div className="login-container">
@@ -24,5 +17,6 @@ class Login extends React.Component {
     );
   }
 }
+
 
 export default Login;

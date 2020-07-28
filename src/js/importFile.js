@@ -1,11 +1,9 @@
 
 import React from "react";
-import { ExcelRenderer, OutTable } from "react-excel-renderer";
-import DownloadPDF from './downloadPDF'
+import { ExcelRenderer } from "react-excel-renderer";
 import TableView from './tableView';
 
 class ImportFile extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -29,24 +27,20 @@ class ImportFile extends React.Component {
       }
     });
   }
-
-
   render() {
-
     return (
       <div className="upload">
-      <div className="import-container">
-        <label>Upload file</label>
-        <input className="import-input"
-          type="file"
-          onChange={this.changeHandler}
-        />
+        <div className="import-container">
+          <label>Upload file</label>
+          <input className="import-input"
+            type="file"
+            onChange={this.changeHandler}
+          />
+        </div>
+        <div>
+          {this.state.rows.length > 0 ? <TableView data={this.state.rows} /> : ""}
+        </div>
       </div>
-      <div>
-        {this.state.rows.length > 0 ? <TableView data={this.state.rows} /> : ""}
-
-      </div>
-      </div> 
     );
   }
 }
